@@ -25,6 +25,7 @@ Welcome to the Web App DevOps Project repo! This application allows you to effic
 ![Screenshot 2023-08-31 at 15 49 26](https://github.com/maya-a-iuga/Web-App-DevOps-Project/assets/104773240/83236d79-6212-4fc3-afa3-3cee88354b1a)
 
 - **Data Validation:** Ensure data accuracy and completeness with required fields, date restrictions, and card number validation.
+- **Delivery Date Column:** A delivery date column was added, but later reverted as the project decided this was no longer needed. The code is sat on "feature/add-delivery-date" branch incase needed.
 
 ## Getting Started
 

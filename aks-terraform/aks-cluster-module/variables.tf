@@ -28,7 +28,7 @@ variable "service_principal_client_id" {
 variable "service_principal_secret" {
 description = "client_secret"
   type = string
-  default = "ajJ8Q~qVyTanM_K0fdsoTcWUjQgwLQIEFAQlJa5A"
+  default = ""
   
 
 }

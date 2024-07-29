@@ -1,4 +1,13 @@
 
+module "networking" {
+  source = "./networking-module"
+  resource_group_name = "blaise-devops-rg"
+  location = "UK South"
+  vnet_address_space = "10.0.0.0/16"
+  service_principal_client_secret = ""
+}
+
+
 module "aks_cluster" {
   source = "../aks-cluster-module"
 
@@ -6,7 +15,7 @@ module "aks_cluster" {
   aks_cluster_name           = var.aks_cluster_name
   cluster_location           = var.custer_location
   dns_prefix                 = var.dns_prefix
-  #kubernetes_version         = var.kubernetes_version 
+  kubernetes_version         = var.kubernetes_version 
   service_principal_client_id = var.service_principal_client_id
   service_principal_client_secret = var.service_principal_client_secret
 

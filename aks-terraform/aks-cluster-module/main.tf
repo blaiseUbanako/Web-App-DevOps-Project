@@ -63,7 +63,7 @@ resource "azurerm_network_security_rule" "kube_apiserver" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "443"
-  source_address_prefix       = "94.1.249.72"  # Replace with your public IP or IP range
+  source_address_prefix       = ""  # Replace with your public IP or IP range
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.networking.name
   network_security_group_name = azurerm_network_security_group.aks_nsg.name

@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = ">=3.0.0"
+    }
+  }
+}
 
 provider "azurerm" {
     features {
@@ -13,8 +21,9 @@ module "networking" {
   source = "./networking-module"
   resource_group_name = "blaise-devops-rg"
   location = "UK South"
-  vnet_address_space = "10.0.0.0/16"
-  service_principal_client_secret = ""
+  vnet_address_space = ["10.0.0.0/16"]
+  service_principal_client_secret = var.service_principal_client_secret
+  source_address_prefix = var.source_address_prefix
 }
 
 
@@ -28,6 +37,7 @@ module "aks_cluster" {
   kubernetes_version         = var.kubernetes_version 
   service_principal_client_id = var.service_principal_client_id
   service_principal_client_secret = var.service_principal_client_secret
+ 
 
   # Input variables referencing outputs from the networking module
   resource_group_name         = module.networking.resource_group_name

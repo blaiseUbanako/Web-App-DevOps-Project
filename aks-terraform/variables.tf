@@ -46,7 +46,6 @@ variable "dns_prefix" {
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type = string
-  default = "1.26.6"
   
 }
 
@@ -74,5 +73,11 @@ variable "service_principal_client_id" {
 variable "service_principal_client_secret" {
 description = "client_secret"
   type = string
+  
+}
+
+variable "source_address_prefix" {
+    description = "IP address"
+    type = string
   
 }

@@ -21,14 +21,15 @@ variable "kubernetes_version" {
 variable "service_principal_client_id" {
   description = "client_id"
   type = string
-  default = "cc6b148f-a604-4909-ada4-7cceeac6edae"
+  #default = "cc6b148f-a604-4909-ada4-7cceeac6edae"
+  sensitive = true
   
 }
 
-variable "service_principal_secret" {
+variable "service_principal_client_secret" {
 description = "client_secret"
   type = string
-  default = ""
+  sensitive = true
   
 
 }
@@ -43,8 +44,37 @@ variable "subscription_id" {
 variable "resource_group_name" {
   description = "the name of the resource group"
   type = string
-  default = "blaise-devops-rg"
+  default = "$module.networking-module.resource_group_name" # referencing outputs of the networking module as input variable
 }
+
+
+variable "vnet_id" {
+  description = "vnet id"
+  type = string
+  default = "$module.networking-module.vnet_id" #check this to debug
+}
+
+
+variable "control_plane_subnet_id" {
+  description = "vnet subset id"
+  type = string
+  default = "$module.networking-module.control_plane_subnet_id"
+}
+
+variable "worker_node_subnet_id" {
+  description = "worker node subnet id"
+  type = string
+  default = "$module.networking-module.worker_node_subnet_id"
+
+}
+
+variable "aks_nsg_id" {
+  description = "aks nsg id"
+  type = string
+  default = "$module.networking-module.aks_nsg_id"
+  
+}
+
 
 variable "location" {
   description = "the name of the location"
@@ -86,8 +116,3 @@ variable "tenant_id" {
   default = "47d4542c-f112-47f4-92c7-a838d8a5e8ef"
 }
 
-variable "service_principal_client_secret" {
-description = "client_secret"
-  type = string
-  
-}

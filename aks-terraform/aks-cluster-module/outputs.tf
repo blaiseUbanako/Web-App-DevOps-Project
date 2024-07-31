@@ -1,16 +1,17 @@
 output "aks_cluster_name" {
     description = "name of the aks cluster"
-    value = azurerm_resource_group.networking.name
+    value = azurerm_kubernetes_cluster.aks_cluster.name
 }
 
 output "aks_cluster_id" {
     description = "id of the aks cluster"
-    value = azurerm_resource_group.networking.id
+    #value = azurerm_resource_group.networking.id
+    value = azurerm_kubernetes_cluster.aks_cluster.id
 }
 
 output "aks_kubeconfig" {
     description = "description of the aks kubeconfiguration"
-value = azurerm_kubernetes_cluster.aks_cluster.name
+value = azurerm_kubernetes_cluster.aks_cluster.kube_config_raw
 
 }
 

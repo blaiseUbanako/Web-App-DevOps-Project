@@ -1,4 +1,14 @@
 
+provider "azurerm" {
+    features {
+    }
+    client_id = var.service_principal_client_id
+    client_secret = var.service_principal_client_secret
+    subscription_id = var.subscription_id
+    tenant_id = var.tenant_id
+}
+
+
 module "networking" {
   source = "./networking-module"
   resource_group_name = "blaise-devops-rg"
@@ -9,11 +19,11 @@ module "networking" {
 
 
 module "aks_cluster" {
-  source = "../aks-cluster-module"
+  source = "./aks-cluster-module"
 
   # Input variables for the AKS cluster module
   aks_cluster_name           = var.aks_cluster_name
-  cluster_location           = var.custer_location
+  cluster_location           = var.cluster_location
   dns_prefix                 = var.dns_prefix
   kubernetes_version         = var.kubernetes_version 
   service_principal_client_id = var.service_principal_client_id

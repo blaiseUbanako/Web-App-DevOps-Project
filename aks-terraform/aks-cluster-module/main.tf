@@ -1,24 +1,12 @@
-/**
-# Create the Azure Resource Group for networking resources
-
 terraform {
-required_providers {
-azurerm = {
-source = "hashicorp/azurerm"
-version = "=3.0.0"
-}
-}
-}
-provider "azurerm" {
-    features {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.111.0"
     }
-    client_id = var.service_principal_client_id
-    client_secret = var.service_principal_client_secret
-    subscription_id = var.subscription_id
-    tenant_id = var.tenant_id
+  }
 }
-**/
-# Create the AKS cluster
+
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
   name                = var.aks_cluster_name
   location            = var.cluster_location

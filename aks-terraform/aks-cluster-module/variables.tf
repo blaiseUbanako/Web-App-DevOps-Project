@@ -14,7 +14,7 @@ variable "aks_cluster_location" {
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type = string
-  default = "1.28"
+  default = "1.30.0"
   
 }
 

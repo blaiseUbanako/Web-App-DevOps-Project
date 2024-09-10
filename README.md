@@ -54,7 +54,19 @@ To run the application, you simply need to run the `app.py` script in this repos
 
 - **Database:** The application employs an Azure SQL Database as its database system to store order-related data.
 
-## Contributors 
+## Application Containerisation: https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/01_Application-Containerization-Process-with-Docker
+
+## Network Services and IaC : https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/02_Defining-Network-Services-with-IaC
+
+## Creating an AKS Cluster with IaC: https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/03_Creating-an-AKS-Cluster-with-IaC
+
+## Kubernetes Deployment to AKS: https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/04_Kubernetes-Deployment-to-AKS
+
+## CICD Pipeline with Azure DevOps : https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/05_CICD-Pipeline-with-Azure-DevOps
+
+## AKS Cluster Monitoring: https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/06_AKS-Cluster-Monitoring
+
+## AKS Integration with Azure Key Vault and Secrets management: https://github.com/blaiseUbanako/Web-App-DevOps-Project/wiki/07_AKS-Integration-with-Azure-Key-Vault-and-Secrets-management
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
 
